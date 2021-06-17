@@ -18,7 +18,10 @@
         <ul>
             <% bloggers.forEach(blogger => { %> 
             <li>
-                <%= blogger.name %> 
+                <a href="/blogger/<%=blogger._id%>"><%= blogger.name %> </a>
+                <form action="/blogger/<%=blogger._id%>?_method=DELETE" method="POST">
+                <input type="submit" value="X">
+                </form>
             </li>
             <% }); %> 
         </ul>

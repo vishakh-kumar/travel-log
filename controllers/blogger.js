@@ -13,7 +13,7 @@ router.get("/", async (req, res) => {
         res.render("blogger/index",{bloggers});
     }catch(error){
         console.log(error);
-        res.redirect("/");
+        res.redirect("/blogger");
     }
 });
 //=================================
@@ -25,7 +25,15 @@ res.render("blogger/new");
 //=================================
 //            DELETE
 //=================================
-
+router.delete("/:id", async (req,res)=>{
+    try{
+        await Blogger.findByIdAndDelete(req.params.id);
+        res.redirect("/blogger");
+    }catch(error){
+        console.log(error);
+        res.redirect("/blogger");
+    }
+})
 //=================================
 //            EDIT
 //=================================
@@ -33,7 +41,15 @@ res.render("blogger/new");
 //=================================
 //            CREATE
 //=================================
-
+router.post("/", async (req,res)=>{
+try{
+    await Blogger.create(req.body);
+    res.redirect("/blogger");
+}catch(error){
+    console.log(error);
+    res.redirect("/blogger/new");
+}
+});
 //=================================
 //             EDIT
 //=================================
