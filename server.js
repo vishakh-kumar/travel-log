@@ -10,6 +10,9 @@ const logger = require("morgan");
 //  Initialzie EXPRESS
 const app = express();
 
+//Set default view engine
+app.set("view engine","ejs");
+
 //  CONFIG MONGOOSE
 const mongoose = require("mongoose");
 const db = mongoose.connection;
@@ -35,31 +38,21 @@ app.use(logger("dev"));
 //=================================
 //          HOME ROUTE
 //=================================
-app.get("/",(req,res)=> res.render("index.ejs"));
+app.get("/",(req,res)=> {
+    
+    res.render("index.ejs", {
+
+    })
+});
+
+//=================================
+// Mount Controller Middlware
+//=================================
+app.use('/blogger', require('./controllers/blogger'));
+
 //=================================
 //       Express Listener
 //=================================
 app.listen(PORT, ()=>{
     console.log(`Server is listening to PORT ${PORT}`);
-})
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+});
