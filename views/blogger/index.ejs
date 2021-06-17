@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Log | Bloggers</title>
+</head>
+<body>
+    <header>
+        <a href="/blogger">Home</a>
+        <a href="/blogger/new">Add New Blogger</a>
+        <a href="/blogs">Recent Blogs</a>
+        <a href="/blogs/new">New Blog</a>
+    </header>
+    <main>
+        <h1>BLOGGERS</h1>
+        <ul>
+            <% bloggers.forEach(blogger => { %> 
+            <li>
+                <%= blogger.name %> 
+            </li>
+            <% }); %> 
+        </ul>
+    </main>
+</body>
+</html>

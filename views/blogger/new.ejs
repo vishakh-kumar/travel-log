@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome </title>
+<style>
+    .profile-info{
+        display:grid;
+    }
+</style>
+</head>
+
+<body>
+    <header>
+        <a href="/blogger">Home</a>
+        <a href="/blogger/new">Add New Blogger</a>
+        <a href="/blogs">Recent Blogs</a>
+        <a href="/blogs/new">New Blog</a>
+
+    </header>
+    <main>
+        <h3>Tell us About Yourself</h3>
+        <h2>Hey!</h2>
+    </main>
+    <form action="/blogger" method="POST">
+        <fieldset class="profile-info">
+            <label for="name"> NAME</label>
+            <input type="text" id="name" />
+            <label for="age"> AGE</label>
+            <input type="number" id="age" />
+            <label for="hobbies"> HOBBIES</label>
+            <input type="" id="hobbies" />
+            <label for="aboutMe">ABOUT ME</label>
+            <textarea id="aboutMe" cols="30" rows="10" placeholder="Tell us about yourself"></textarea>
+            <input type="submit" value="CREATE PROFILE">
+        </fieldset>
+    </form>
+</body>
+
+</html>
