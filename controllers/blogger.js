@@ -4,14 +4,17 @@
 const router = require("express").Router();
 const Blogger = require("../models/blogger");
 
+
 //=================================
 //            INDEX
 //=================================
 router.get("/", async (req, res) => {
-    try{
+    try {
         const bloggers = await Blogger.find({});
-        res.render("blogger/index",{bloggers});
-    }catch(error){
+        res.render("blogger/index", {
+            bloggers
+        });
+    } catch (error) {
         console.log(error);
         res.redirect("/blogger");
     }
@@ -19,17 +22,17 @@ router.get("/", async (req, res) => {
 //=================================
 //             NEW
 //=================================
-router.get("/new",(req,res)=>{
-res.render("blogger/new");
+router.get("/new", (req, res) => {
+    res.render("blogger/new");
 });
 //=================================
 //            DELETE
 //=================================
-router.delete("/:id", async (req,res)=>{
-    try{
+router.delete("/:id", async (req, res) => {
+    try {
         await Blogger.findByIdAndDelete(req.params.id);
         res.redirect("/blogger");
-    }catch(error){
+    } catch (error) {
         console.log(error);
         res.redirect("/blogger");
     }
@@ -41,14 +44,14 @@ router.delete("/:id", async (req,res)=>{
 //=================================
 //            CREATE
 //=================================
-router.post("/", async (req,res)=>{
-try{
-    await Blogger.create(req.body);
-    res.redirect("/blogger");
-}catch(error){
-    console.log(error);
-    res.redirect("/blogger/new");
-}
+router.post("/", async (req, res) => {
+    try {
+        await Blogger.create(req.body);
+        res.redirect("/blogger");
+    } catch (error) {
+        console.log(error);
+        res.redirect("/blogger/new");
+    }
 });
 //=================================
 //             EDIT
@@ -57,5 +60,18 @@ try{
 //=================================
 //             SHOW
 //=================================
+router.get("/:id", async (req, res) => {
+    try {
+        const blogger = await Blogger.findById(req.params.id);
+        res.render("blogger/show",{
+            blogger
+        });
+    } catch (error) {
+        console.log(error);
+        res.redirect("/blogger");
+    }
+});
+
+
 
 module.exports = router;

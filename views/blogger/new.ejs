@@ -6,11 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome </title>
-<style>
-    .profile-info{
-        display:grid;
-    }
-</style>
+    <style>
+        .profile-info {
+            display: grid;
+        }
+        span{
+            display: flex;
+        }
+    </style>
+
 </head>
 
 <body>
@@ -19,7 +23,6 @@
         <a href="/blogger/new">Add New Blogger</a>
         <a href="/blogs">Recent Blogs</a>
         <a href="/blogs/new">New Blog</a>
-
     </header>
     <main>
         <h3>Tell us About Yourself</h3>
@@ -28,7 +31,10 @@
     <form action="/blogger" method="POST">
         <fieldset class="profile-info">
             <label for="name"> NAME</label>
-            <input type="text" name="name" id="name" />
+            <span class="firstLastName">
+            <input type="text" name="first_name" id="name" placeholder="First Name" />
+            <input type="text" name="last_name" id="name" placeholder="Last Name"/>
+            </span>
             <label for="age"> AGE</label>
             <input type="number" name="age" id="age" />
             <label for="hobbies"> HOBBIES</label>

@@ -2,7 +2,8 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const bloggerSchema = new Schema({
-    name: String,
+    first_name: String,
+    last_name:String,
     age: Number,
     hobbies: String,
     aboutMe: String
