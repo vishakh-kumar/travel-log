@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome </title>
+    <title>Edit <%=blogger.first_name%> </title>
     <style>
         .profile-info {
             display: grid;
@@ -26,23 +26,22 @@
         <a href="/blogs/new">New Blog</a>
     </header>
     <main>
-        <h3>Tell us About Yourself</h3>
-        <h2>Hey!</h2>
+        <h2>Edit <%= blogger.first_name %> </h2>
     </main>
-    <form action="/blogger" method="POST">
+    <form action="/blogger/<%=blogger._id %>?_method=PUT " method="POST">
         <fieldset class="profile-info">
             <label for="name"> NAME</label>
             <span class="firstLastName">
-                <input type="text" name="first_name" id="name" placeholder="First Name" />
-                <input type="text" name="last_name" id="name" placeholder="Last Name" />
+                <input type="text" name="first_name" id="name" value="<%=blogger.first_name%>" />
+                <input type="text" name="last_name" id="name" value="<%=blogger.last_name%>" />
             </span>
             <label for="age"> AGE</label>
-            <input type="number" name="age" id="age" />
+            <input type="number" name="age" id="age" value="<%=blogger.age%>" />
             <label for="hobbies"> HOBBIES</label>
-            <input type="text" name="hobbies" id="hobbies" />
+            <input type="text" name="hobbies" id="hobbies" value="<%=blogger.hobbies%>" />
             <label for="aboutMe">ABOUT ME</label>
-            <textarea id="aboutMe" name="aboutMe" cols="30" rows="10" placeholder="Tell us about yourself"></textarea>
-            <input type="submit" value="CREATE PROFILE">
+            <textarea id="aboutMe" name="aboutMe" cols="30" rows="10"><%= blogger.aboutMe %></textarea>
+            <input type="submit" value="SUBMIT CHANGES">
         </fieldset>
     </form>
 </body>

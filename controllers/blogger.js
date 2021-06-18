@@ -38,8 +38,15 @@ router.delete("/:id", async (req, res) => {
     }
 })
 //=================================
-//            EDIT
+//            UPDATE
 //=================================
+router.put("/:id", (req, res) => {
+    Blogger.findByIdAndUpdate(req.params.id, req.body, {
+        new: true
+    }, (err, updatedBlogger) => {
+        res.redirect(`/blogger/${req.params.id}`);
+    });
+});
 
 //=================================
 //            CREATE
@@ -56,14 +63,25 @@ router.post("/", async (req, res) => {
 //=================================
 //             EDIT
 //=================================
+router.get("/:id/edit", async (req, res) => {
+    try {
+        const blogger = await Blogger.findById(req.params.id);
+        res.render("blogger/edit", {
+            blogger
+        });
 
+    } catch (error) {
+        console.log(error);
+        res.redirect("/blogger");
+    }
+});
 //=================================
 //             SHOW
 //=================================
 router.get("/:id", async (req, res) => {
     try {
         const blogger = await Blogger.findById(req.params.id);
-        res.render("blogger/show",{
+        res.render("blogger/show", {
             blogger
         });
     } catch (error) {
