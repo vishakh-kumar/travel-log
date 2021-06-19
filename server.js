@@ -49,6 +49,7 @@ app.get("/",(req,res)=> {
 // Mount Controller Middlware
 //=================================
 app.use('/blogger', require('./controllers/blogger'));
+app.use('/blogs', require('./controllers/blog'));
 
 //=================================
 //       Express Listener
