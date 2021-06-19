@@ -56,7 +56,17 @@ router.post("/", async(req,res)=>{
 //=================================
 //              SHOW
 //=================================
-
+router.get("/:id", async(req,res)=>{
+try{
+    const blog = await Blog.findById(req.params.id);
+    res.render("blogs/show", {
+        blog
+    });
+}catch(error){
+    console.log(error);
+    res.redirect("/blogs");
+}
+});
 //=================================
 //            EXPORT
 //=================================
