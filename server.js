@@ -12,7 +12,6 @@ const app = express();
 
 //Set default view engine
 app.set("view engine","ejs");
-
 //  CONFIG MONGOOSE
 const mongoose = require("mongoose");
 const db = mongoose.connection;
@@ -32,6 +31,7 @@ db.on("disconnected", ()=> console.log("mongo disconnected"));
 //       MOUNT MIDDLEWARE
 //=================================
 app.use(express.urlencoded({extended:false}));
+app.use(express.static("public"));
 app.use(methodOverride("_method"));
 app.use(logger("dev"));
 
@@ -41,8 +41,8 @@ app.use(logger("dev"));
 app.get("/",(req,res)=> {
     
     res.render("index.ejs", {
-
-    })
+ 
+    });
 });
 
 //=================================

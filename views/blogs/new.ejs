@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include('../partials/navigation-css.ejs')  %>
     <style>
         fieldset {
             display: grid;
@@ -14,12 +15,7 @@
 </head>
 
 <body>
-    <header>
-        <a href="/blogger">Home</a>
-        <a href="/blogger/new">Add New Blogger</a>
-        <a href="/blogs">Recent Blogs</a>
-        <a href="/blogs/new">New Blog</a>
-    </header>
+    <%- include('../partials/nav.ejs')  %>
     <main>
         <form action="/blogs" method="POST">
             <fieldset class="blog-info">
