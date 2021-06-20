@@ -16,7 +16,7 @@
             text-align: justify;
         }
     </style>
-    <title>Travel Blog | </title>
+    <title>Travel Blog | <%=blog.title%> </title>
 </head>
 
 <body>
@@ -35,7 +35,7 @@
             </div>
         </div>
         <div class="edit">
-            <a href="/blogs/<%= blog._id %>/edit ">EDIT</a>
+            <a href="/blogs/<%=blog._id%>/edit ">EDIT</a>
         </div>
     </main>
 </body>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Log | Edit</title>
+</head>
+
+<body>
+    <header>
+        <a href="/blogger">Home</a>
+        <a href="/blogger/new">Add New Blogger</a>
+        <a href="/blogs">Recent Blogs</a>
+        <a href="/blogs/new">New Blog</a>
+    </header>
+    <main>
+        <h2>Edit This Blog</h2>
+    </main>
+    <form action="/blogs/<%= blog._id %>?_method=PUT " method="POST">
+        <fieldset class="blog-info">
+            <label for="title">Title</label>
+            <input type="text" name="title" id="title" value="<%=blog.title%>"/>
+            <label for="blog_img">Image Link</label>
+            <input type="text" name="blog_img" id="blog_img" value="<%=blog.blog_img%>"/>
+            <label for="blog_desc">Blog Description</label>
+            <textarea id="blog_desc" name="blog_desc" cols="30" rows="10"
+                placeholder="Share your experience"><%=blog.blog_desc%>"</textarea>
+            <input type="submit" value="SUBMIT CHANGES">
+            <a href="/blogs"> <input type="button" value="CANCEL"> </a>
+        </fieldset>
+    </form>
+</body>
+
+</html>

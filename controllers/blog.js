@@ -38,6 +38,13 @@ try{
 //=================================
 //             UPDATE
 //=================================
+router.put("/:id", (req, res) => {
+    Blog.findByIdAndUpdate(req.params.id, req.body, {
+        new: true
+    }, (err, updatedBlog) => {
+        res.redirect(`/blogs/${req.params.id}`);
+    });
+});
 //=================================
 //             CREATE
 //=================================
@@ -53,6 +60,18 @@ router.post("/", async(req,res)=>{
 //=================================
 //              EDIT
 //=================================
+router.get("/:id/edit", async (req, res) => {
+    try {
+        const blog = await Blog.findById(req.params.id);
+        res.render("blogs/edit", {
+            blog
+        });
+
+    } catch (error) {
+        console.log(error);
+        res.redirect("/blogs/:id");
+    }
+});
 //=================================
 //              SHOW
 //=================================
