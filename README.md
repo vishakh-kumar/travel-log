@@ -25,4 +25,4 @@ A simple Travel Blog to share your travel experience.
 - Add geolocation for the blogs
 
 ## Website
-https://vishakh-kumar.github.io/travel-log/
+https://v-travel-log.herokuapp.com/
