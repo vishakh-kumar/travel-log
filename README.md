@@ -24,3 +24,5 @@ A simple Travel Blog to share your travel experience.
 - Ability to use webcam to take picture
 - Add geolocation for the blogs
 
+## Website
+https://vishakh-kumar.github.io/travel-log/
