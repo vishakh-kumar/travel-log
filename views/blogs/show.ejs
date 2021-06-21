@@ -3,16 +3,12 @@
 
 <head>
     <%- include('../partials/head.ejs')  %>
-    <%- include('../partials/navigation-css.ejs')  %>
+    <%- include('../partials/css-global.ejs')  %>
     <style>
 
         img {
             width: 400px;
             float: right;
-        }
-
-        p {
-            text-align: justify;
         }
     </style>
     <title>Travel Blog | <%=blog.title%> </title>
@@ -29,7 +25,7 @@
             </div>
         </div>
         <div class="edit">
-            <a href="/blogs/<%=blog._id%>/edit ">EDIT</a>
+            <a href="/blogs/<%=blog._id%>/edit "><i class="fas fa-edit"></i></a>
         </div>
     </main>
 </body>

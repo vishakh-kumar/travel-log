@@ -3,7 +3,7 @@
 
 <head>
     <%- include('../partials/head.ejs')  %>
-    <%- include('../partials/navigation-css.ejs')  %>
+    <%- include('../partials/css-global.ejs')  %>
     <title>Edit <%=blogger.first_name%> </title>
     <style>
         .profile-info {
@@ -12,6 +12,16 @@
 
         span {
             display: flex;
+        }
+
+        span input.first_name {
+            margin-right: 40px;
+            width: 50%;
+        }
+
+        span input.last_name {
+            width: 50%;
+
         }
     </style>
 
@@ -22,12 +32,12 @@
     <main>
         <h2>Edit <%= blogger.first_name %> </h2>
     </main>
-    <form action="/blogger/<%=blogger._id %>?_method=PUT " method="POST">
+    <form class="container" action="/blogger/<%=blogger._id %>?_method=PUT " method="POST">
         <fieldset class="profile-info">
             <label for="name"> NAME</label>
             <span class="firstLastName">
-                <input type="text" name="first_name" id="name" value="<%=blogger.first_name%>" />
-                <input type="text" name="last_name" id="name" value="<%=blogger.last_name%>" />
+                <input class="first_name" type="text" name="first_name" id="name" value="<%=blogger.first_name%>" />
+                <input class="last_name" type="text" name="last_name" id="name" value="<%=blogger.last_name%>" />
             </span>
             <label for="age"> AGE</label>
             <input type="number" name="age" id="age" value="<%=blogger.age%>" />

@@ -3,7 +3,7 @@
 
 <head>
     <%- include('../partials/head.ejs')  %>
-    <%- include('../partials/navigation-css.ejs')  %>
+    <%- include('../partials/css-global.ejs')  %>
     <title>Travel Blog | <%=blogger.name%> </title>
 </head>
 
@@ -18,12 +18,12 @@
             Full Name: <%=blogger.first_name%> <%= blogger.last_name %> <br />
             Age: <%= blogger.age %> <br />
             Hobbies: <%= blogger.hobbies %> <br />
-            About Me: <%= blogger.aboutMe %> <br />
+            About Me: <p><%= blogger.aboutMe %></p>
 
         </div>
         <footer>
             <a href="#">Blogs By <%=blogger.first_name%></a>
-            <a href="/blogger/<%=blogger._id%>/edit">EDIT</a>
+            <span><a href="/blogger/<%=blogger._id%>/edit"><i class="fas fa-user-edit"></i></a></span>
         </footer>
     </main>
 </body>

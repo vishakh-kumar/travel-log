@@ -3,7 +3,7 @@
 
 <head>
     <%- include('../partials/head.ejs')  %>
-    <%- include('../partials/navigation-css.ejs')  %>
+    <%- include('../partials/css-global.ejs')  %>
     <style>
         .blog_desc {
             overflow: hidden;
@@ -11,6 +11,7 @@
             display: -webkit-box;
             -webkit-line-clamp: 3;
             -webkit-box-orient: vertical;
+            margin-top: -40px;
         }
 
         .title-delete {
@@ -22,16 +23,16 @@
 
 <body>
     <%- include('../partials/nav.ejs')  %>
-    <main>
+    <main class="container">
         <h1>BLOGS</h1>
         <div>
             <ul>
                 <% blogs.forEach(blog =>{ %>
                 <li>
                     <div class="title-delete">
-                        <a href="/blogs/<%= blog._id %> "><%= blog.title%></a>
+                        <a class="li-heading" href="/blogs/<%= blog._id %> "><%= blog.title%></a>
                         <form action="/blogs/<%=blog._id%>?_method=DELETE" method="POST">
-                            <input type="submit" value="X">
+                            <button type="submit"><i class="fas fa-trash-alt"></i></button>
                         </form>
                     </div>
                     <div class="blog_desc">

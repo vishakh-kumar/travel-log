@@ -3,10 +3,12 @@
 
 <head>
     <%- include('../partials/head.ejs')  %>
-    <%- include('../partials/navigation-css.ejs')  %>
+    <%- include('../partials/css-global.ejs')  %>
     <style>
+
         fieldset {
             display: grid;
+            margin-top: 50px;
         }
     </style>
     <title>Travel Log | New Blog</title>
@@ -14,7 +16,7 @@
 
 <body>
     <%- include('../partials/nav.ejs')  %>
-    <main>
+    <main class="container">
         <form action="/blogs" method="POST">
             <fieldset class="blog-info">
                 <label for="title">Title</label>

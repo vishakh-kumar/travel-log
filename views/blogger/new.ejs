@@ -3,7 +3,7 @@
 
 <head>
     <%- include('../partials/head.ejs')  %>
-    <%- include('../partials/navigation-css.ejs')  %>
+    <%- include('../partials/css-global.ejs')  %>
     <title>Welcome </title>
     <style>
         .profile-info {
@@ -12,7 +12,17 @@
 
         span {
             display: flex;
+
         }
+        span input.first_name{
+            margin-right: 40px;
+            width: 50%;
+        }
+        span input.last_name{
+            width: 50%;
+
+        }
+
     </style>
 
 </head>
@@ -23,12 +33,12 @@
         <h3>Tell us About Yourself</h3>
         <h2>Hey!</h2>
     </main>
-    <form action="/blogger" method="POST">
+    <form class="container" action="/blogger" method="POST">
         <fieldset class="profile-info">
             <label for="name"> NAME</label>
             <span class="firstLastName">
-                <input type="text" name="first_name" id="name" placeholder="First Name" />
-                <input type="text" name="last_name" id="name" placeholder="Last Name" />
+                <input class="first_name" type="text" name="first_name" id="name" placeholder="First Name" />
+                <input class="last_name" type="text" name="last_name" id="name" placeholder="Last Name" />
             </span>
             <label for="age"> AGE</label>
             <input type="number" name="age" id="age" />
