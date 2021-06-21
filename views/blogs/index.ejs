@@ -5,6 +5,9 @@
     <%- include('../partials/head.ejs')  %>
     <%- include('../partials/css-global.ejs')  %>
     <style>
+        h1{
+            margin-top: 15px;
+        }
         .blog_desc {
             overflow: hidden;
             text-overflow: ellipsis;
@@ -38,7 +41,6 @@
                     <div class="blog_desc">
                         <%= blog.blog_desc%>
                     </div>
-
                 </li>
                 <%}) %>
             </ul>
